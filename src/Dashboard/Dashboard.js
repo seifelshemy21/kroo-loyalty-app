@@ -1,7 +1,8 @@
 import React from 'react';
 import { useUserProfile } from '../hooks/useLoyalty';
 import { useAuth } from '../hooks/useAuth';
-import { FiUsers, FiCreditCard, FiStar, FiGift, FiClock, FiCheckCircle } from 'react-icons/fi';
+import { Link } from 'react-router-dom';
+import { FiUsers, FiCreditCard, FiStar, FiGift, FiClock, FiCheckCircle, FiActivity } from 'react-icons/fi';
 
 export default function Dashboard() {
   const { user } = useAuth();
@@ -25,7 +26,7 @@ export default function Dashboard() {
         {/* Profile Header */}
         <div className="flex items-center justify-between border-b border-gray-50 pb-10">
           <div className="flex items-center gap-8">
-            <div className="w-24 h-24 bg-black text-white rounded-[2rem] flex items-center justify-center text-4xl font-black shadow-2xl">
+            <div className="w-24 h-24 bg-primary text-black rounded-[2rem] flex items-center justify-center text-4xl font-black shadow-2xl">
               {user?.name?.charAt(0)}
             </div>
             <div>
@@ -43,23 +44,23 @@ export default function Dashboard() {
 
         {/* Dynamic Rewards Card */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          <div className="lg:col-span-2 bg-black text-white p-12 rounded-[3.5rem] shadow-[0_50px_100px_-20px_rgba(0,0,0,0.3)] relative overflow-hidden group hover:scale-[1.01] transition-transform duration-500">
-            <div className="absolute top-0 right-0 w-80 h-80 bg-white/5 -mr-40 -mt-40 rounded-full blur-3xl transition-transform duration-700 group-hover:scale-110"></div>
+          <div className="lg:col-span-2 bg-primary text-black p-12 rounded-[3.5rem] shadow-[0_50px_100px_-20px_rgba(255,185,0,0.3)] relative overflow-hidden group hover:scale-[1.01] transition-transform duration-500">
+            <div className="absolute top-0 right-0 w-80 h-80 bg-black/5 -mr-40 -mt-40 rounded-full blur-3xl transition-transform duration-700 group-hover:scale-110"></div>
             <div className="relative z-10">
               <div className="flex justify-between items-start mb-20 whitespace-nowrap">
                 <div>
-                  <p className="text-[10px] font-black uppercase tracking-[0.4em] text-white/30 mb-2">Available Balance</p>
+                  <p className="text-[10px] font-black uppercase tracking-[0.4em] text-black/30 mb-2">Available Balance</p>
                   <h2 className="text-7xl font-black tracking-tighter">{points} <span className="text-lg uppercase tracking-[0.2em] opacity-40 ml-2">Points</span></h2>
                 </div>
-                <div className="w-16 h-16 border-2 border-white/10 rounded-3xl flex items-center justify-center text-3xl">
-                  <FiStar className="text-white/40" />
+                <div className="w-16 h-16 border-2 border-black/10 rounded-3xl flex items-center justify-center text-3xl">
+                  <FiStar className="text-black/40" />
                 </div>
               </div>
               <div className="flex items-center gap-6">
-                <button className="bg-white text-black px-10 py-5 rounded-3xl font-black text-sm shadow-xl hover:bg-gray-100 transition transform hover:scale-105 active:scale-95">
+                <button className="bg-black text-white px-10 py-5 rounded-3xl font-black text-sm shadow-xl hover:bg-gray-800 transition transform hover:scale-105 active:scale-95">
                   Redeem Rewards
                 </button>
-                <p className="text-[10px] font-bold text-white/40 uppercase tracking-widest max-w-[120px]">Points earned from {visits} visits.</p>
+                <p className="text-[10px] font-bold text-black/40 uppercase tracking-widest max-w-[120px]">Points earned from {visits} visits.</p>
               </div>
             </div>
           </div>
@@ -74,7 +75,7 @@ export default function Dashboard() {
                     <p className="text-xs font-black">{Math.max(nextRewardThreshold - points, 0)} pts left</p>
                   </div>
                   <div className="h-4 bg-white rounded-full overflow-hidden border border-gray-100">
-                    <div className="h-full bg-black rounded-full transition-all duration-1000" style={{ width: `${progress}%` }}></div>
+                    <div className="h-full bg-secondary rounded-full transition-all duration-1000 shadow-[0_0_20px_rgba(255,140,0,0.4)]" style={{ width: `${progress}%` }}></div>
                   </div>
                 </div>
                 <div className="flex items-center gap-4 text-emerald-600">
@@ -83,7 +84,12 @@ export default function Dashboard() {
                 </div>
               </div>
             </div>
-            <button className="w-full text-xs font-black uppercase tracking-[0.2em] text-gray-400 hover:text-black transition mt-8">View All Perks</button>
+            <Link 
+              to="/dashboard/perks" 
+              className="w-full mt-8 bg-primary text-black py-4 rounded-[2rem] font-black text-xs text-center uppercase tracking-[0.2em] shadow-xl hover:opacity-90 transition active:scale-95 flex items-center justify-center gap-2 border-2 border-white"
+            >
+              <FiActivity /> View All Perks History
+            </Link>
           </div>
         </div>
 
@@ -100,7 +106,7 @@ export default function Dashboard() {
               { title: 'KROO Merchandise', cost: '120 pts', icon: <FiStar /> },
             ].map((perk, idx) => (
               <div key={idx} className="bg-white p-8 rounded-[2.5rem] border border-gray-100 shadow-sm hover:shadow-xl transition-all group group cursor-pointer hover:border-black">
-                <div className="w-14 h-14 bg-gray-50 rounded-2xl flex items-center justify-center text-xl text-gray-400 mb-8 transition-colors group-hover:bg-black group-hover:text-white">
+                <div className="w-14 h-14 bg-gray-50 rounded-2xl flex items-center justify-center text-xl text-gray-400 mb-8 transition-colors group-hover:bg-primary group-hover:text-black">
                   {perk.icon}
                 </div>
                 <h4 className="text-xl font-bold text-gray-900 mb-2">{perk.title}</h4>

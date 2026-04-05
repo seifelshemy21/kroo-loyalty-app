@@ -54,7 +54,7 @@ export default function CreateUser() {
               placeholder="John Doe"
               value={name}
               onChange={(e) => setName(e.target.value)}
-              className="w-full px-6 py-4 bg-gray-50 border border-gray-100 rounded-2xl focus:ring-4 focus:ring-black/5 focus:border-black outline-none transition-all font-medium"
+              className="w-full px-6 py-4 bg-gray-50 border border-gray-100 rounded-2xl focus:ring-4 focus:ring-primary/10 focus:border-secondary outline-none transition-all font-medium"
             />
           </div>
 
@@ -65,7 +65,7 @@ export default function CreateUser() {
               placeholder="john@example.com"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="w-full px-6 py-4 bg-gray-50 border border-gray-100 rounded-2xl focus:ring-4 focus:ring-black/5 focus:border-black outline-none transition-all font-medium"
+              className="w-full px-6 py-4 bg-gray-50 border border-gray-100 rounded-2xl focus:ring-4 focus:ring-primary/10 focus:border-secondary outline-none transition-all font-medium"
             />
           </div>
 
@@ -76,7 +76,7 @@ export default function CreateUser() {
               placeholder="••••••••"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="w-full px-6 py-4 bg-gray-50 border border-gray-100 rounded-2xl focus:ring-4 focus:ring-black/5 focus:border-black outline-none transition-all font-medium"
+              className="w-full px-6 py-4 bg-gray-50 border border-gray-100 rounded-2xl focus:ring-4 focus:ring-primary/10 focus:border-secondary outline-none transition-all font-medium"
             />
           </div>
 
@@ -87,14 +87,14 @@ export default function CreateUser() {
               placeholder="••••••••"
               value={confirmPassword}
               onChange={(e) => setConfirmPassword(e.target.value)}
-              className="w-full px-6 py-4 bg-gray-50 border border-gray-100 rounded-2xl focus:ring-4 focus:ring-black/5 focus:border-black outline-none transition-all font-medium"
+              className="w-full px-6 py-4 bg-gray-50 border border-gray-100 rounded-2xl focus:ring-4 focus:ring-primary/10 focus:border-secondary transition-all outline-none"
             />
           </div>
 
           <button
             type="submit"
             disabled={loading}
-            className="w-full py-5 bg-black hover:bg-gray-800 text-white font-black rounded-2xl shadow-xl transition-all active:scale-95 disabled:opacity-50"
+            className="w-full py-5 bg-primary hover:opacity-90 text-black font-black rounded-[2rem] shadow-xl transition-all active:scale-95 disabled:opacity-50 border-4 border-white"
           >
             {loading ? "Creating..." : "Create User"}
           </button>

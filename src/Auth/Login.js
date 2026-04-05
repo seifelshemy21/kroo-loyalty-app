@@ -29,7 +29,7 @@ export default function Login() {
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="mt-1 block w-full border border-gray-100 bg-gray-50 rounded-2xl px-6 py-4 focus:ring-4 focus:ring-black/5 focus:border-black transition-all outline-none"
+                className="mt-1 block w-full border border-gray-100 bg-gray-50 rounded-2xl px-6 py-4 focus:ring-4 focus:ring-primary/10 focus:border-secondary transition-all outline-none"
                 placeholder="john@example.com"
               />
             </div>
@@ -41,7 +41,7 @@ export default function Login() {
                 required
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="mt-1 block w-full border border-gray-100 bg-gray-50 rounded-2xl px-6 py-4 focus:ring-4 focus:ring-black/5 focus:border-black transition-all outline-none"
+                className="mt-1 block w-full border border-gray-100 bg-gray-50 rounded-2xl px-6 py-4 focus:ring-4 focus:ring-primary/10 focus:border-secondary transition-all outline-none"
                 placeholder="••••••••"
               />
             </div>
@@ -50,7 +50,7 @@ export default function Login() {
           <button
             type="submit"
             disabled={isLoggingIn}
-            className={`w-full bg-black text-white py-5 rounded-2xl font-black text-lg hover:bg-gray-800 transition-all shadow-xl active:scale-95 disabled:opacity-50 flex items-center justify-center`}
+            className={`w-full bg-primary text-black py-5 rounded-[2rem] font-black text-lg hover:opacity-90 transition-all shadow-xl active:scale-95 disabled:opacity-50 flex items-center justify-center border-4 border-white`}
           >
             {isLoggingIn ? 'Logging In...' : 'Sign In'}
           </button>
@@ -58,7 +58,7 @@ export default function Login() {
 
         <p className="mt-8 text-center text-sm text-gray-400 font-medium">
           Don't have an account?{" "}
-          <Link to="/signup" className="font-black text-black hover:underline underline-offset-4 decoration-2">
+          <Link to="/signup" className="font-black text-secondary hover:underline underline-offset-4 decoration-2">
             Create one now
           </Link>
         </p>

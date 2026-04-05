@@ -28,21 +28,21 @@ export default function Navbar() {
           <div className="flex items-center">
             <Link to="/" className="flex-shrink-0 flex items-center gap-2">
               <span className="text-3xl font-black tracking-tighter text-black">KROO</span>
-              <span className="hidden md:block text-[10px] font-bold uppercase tracking-[0.3em] text-gray-400 bg-gray-50 px-2 py-1 rounded-md">Loyalty</span>
+              <span className="hidden md:block text-[10px] font-bold uppercase tracking-[0.3em] text-gray-400 bg-gray-50 px-2 py-1 rounded-md">Creative Collective</span>
             </Link>
           </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
-            <NavLink to="/" className={({isActive}) => `text-sm font-bold uppercase tracking-widest ${isActive ? 'text-black' : 'text-gray-400 hover:text-black transition-colors'}`}>Home</NavLink>
-            
+            <NavLink to="/" className={({ isActive }) => `text-sm font-bold uppercase tracking-widest ${isActive ? 'text-black' : 'text-gray-400 hover:text-black transition-colors'}`}>Home</NavLink>
+
             {isAuthenticated ? (
               <div className="relative ml-4" ref={dropdownRef}>
                 <button
                   onClick={() => setIsDropdownOpen(!isDropdownOpen)}
                   className="flex items-center gap-3 bg-gray-50 hover:bg-gray-100 px-4 py-2 rounded-2xl border border-gray-100 transition-all group"
                 >
-                  <div className="w-8 h-8 bg-black text-white rounded-full flex items-center justify-center font-bold text-xs uppercase shadow-sm">
+                  <div className="w-8 h-8 bg-primary text-black rounded-full flex items-center justify-center font-bold text-xs uppercase shadow-sm">
                     {user?.name?.charAt(0)}
                   </div>
                   <span className="text-sm font-bold text-gray-700">Hello, {user?.name?.split(' ')[0]}</span>
@@ -84,7 +84,7 @@ export default function Navbar() {
                         setIsDropdownOpen(false);
                         logout();
                       }}
-                      className="w-full flex items-center gap-3 px-4 py-3 text-sm font-bold text-red-500 hover:bg-red-50 rounded-2xl transition"
+                      className="w-full flex items-center gap-3 px-4 py-3 text-sm font-bold text-rose-500 hover:bg-rose-50 rounded-2xl transition"
                     >
                       <FiLogOut className="text-lg" /> Logout
                     </button>
@@ -94,7 +94,7 @@ export default function Navbar() {
             ) : (
               <div className="flex items-center gap-4">
                 <Link to="/login" className="text-sm font-extrabold text-gray-900 hover:opacity-70 transition">Sign In</Link>
-                <Link to="/signup" className="bg-black text-white px-6 py-3 rounded-2xl text-sm font-bold shadow-lg hover:bg-gray-800 transition transform hover:scale-[1.05] active:scale-95">Get Started</Link>
+                <Link to="/signup" className="bg-primary text-black px-6 py-3 rounded-3xl text-sm font-bold shadow-lg hover:opacity-90 transition transform hover:scale-[1.05] active:scale-95">Get Started</Link>
               </div>
             )}
           </div>
@@ -130,15 +130,15 @@ export default function Navbar() {
                 <Link to="/dashboard" onClick={() => setIsMenuOpen(false)} className="block py-3 font-bold text-gray-500">Dashboard</Link>
                 <Link to="/admin/users" onClick={() => setIsMenuOpen(false)} className="block py-3 font-bold text-gray-500">Customers</Link>
               </div>
-              <button 
-                onClick={() => {
-                  setIsMenuOpen(false);
-                  logout();
-                }} 
-                className="w-full bg-red-50 text-red-500 py-4 rounded-2xl font-bold flex items-center justify-center gap-2"
-              >
-                <FiLogOut /> Logout
-              </button>
+                      <button
+                        onClick={() => {
+                          setIsMenuOpen(false);
+                          logout();
+                        }}
+                        className="w-full bg-rose-50 text-rose-500 py-4 rounded-2xl font-bold flex items-center justify-center gap-2 transition-all active:scale-95"
+                      >
+                        <FiLogOut /> Logout
+                      </button>
             </>
           ) : (
             <div className="grid grid-cols-2 gap-4">

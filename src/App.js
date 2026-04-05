@@ -14,6 +14,7 @@ import CreateUser from './CreateUser';
 import { AdminRoute, UserRoute } from './Auth/ProtectedRoute';
 import Navbar from './component/Navbar';
 import AdminDashboard from './Dashboard/AdminDashboard';
+import PerksHistory from './features/customers/pages/PerksHistory';
 
 function App() {
   return (
@@ -37,6 +38,7 @@ function App() {
         {/* Customer Protected Routes */}
         <Route element={<UserRoute />} >
           <Route path='/dashboard' element={<Dashboard/>}/>
+          <Route path='/dashboard/perks' element={<PerksHistory/>}/>
         </Route>
       </Routes>
     </div>

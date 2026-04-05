@@ -40,14 +40,14 @@ export default function SignUp() {
             <button
               type="button"
               onClick={() => setIsBusiness(false)}
-              className={`flex-1 py-3 px-4 rounded-xl text-sm font-black transition-all uppercase tracking-widest ${!isBusiness ? 'bg-black text-white shadow-md' : 'text-gray-400'}`}
+              className={`flex-1 py-3 px-4 rounded-xl text-sm font-black transition-all uppercase tracking-widest ${!isBusiness ? 'bg-primary text-black shadow-md' : 'text-gray-400'}`}
             >
               Customer
             </button>
             <button
               type="button"
               onClick={() => setIsBusiness(true)}
-              className={`flex-1 py-3 px-4 rounded-xl text-sm font-black transition-all uppercase tracking-widest ${isBusiness ? 'bg-black text-white shadow-md' : 'text-gray-400'}`}
+              className={`flex-1 py-3 px-4 rounded-xl text-sm font-black transition-all uppercase tracking-widest ${isBusiness ? 'bg-primary text-black shadow-md' : 'text-gray-400'}`}
             >
               Business
             </button>
@@ -61,7 +61,7 @@ export default function SignUp() {
                 required
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                className="mt-1 block w-full border border-gray-100 bg-gray-50 rounded-2xl px-6 py-4 focus:ring-4 focus:ring-black/5 focus:border-black transition-all outline-none"
+                className="mt-1 block w-full border border-gray-100 bg-gray-50 rounded-2xl px-6 py-4 focus:ring-4 focus:ring-primary/10 focus:border-secondary transition-all outline-none"
                 placeholder="John Doe"
               />
             </div>
@@ -73,7 +73,7 @@ export default function SignUp() {
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="mt-1 block w-full border border-gray-100 bg-gray-50 rounded-2xl px-6 py-4 focus:ring-4 focus:ring-black/5 focus:border-black transition-all outline-none"
+                className="mt-1 block w-full border border-gray-100 bg-gray-50 rounded-2xl px-6 py-4 focus:ring-4 focus:ring-primary/10 focus:border-secondary transition-all outline-none"
                 placeholder="john@example.com"
               />
             </div>
@@ -86,7 +86,7 @@ export default function SignUp() {
                   required
                   value={businessName}
                   onChange={(e) => setBusinessName(e.target.value)}
-                  className="mt-1 block w-full border border-gray-100 bg-gray-50 rounded-2xl px-6 py-4 focus:ring-4 focus:ring-black/5 focus:border-black transition-all outline-none"
+                  className="mt-1 block w-full border border-gray-100 bg-gray-50 rounded-2xl px-6 py-4 focus:ring-4 focus:ring-primary/10 focus:border-secondary transition-all outline-none"
                   placeholder="My Store"
                 />
               </div>
@@ -99,7 +99,7 @@ export default function SignUp() {
                 required
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="mt-1 block w-full border border-gray-100 bg-gray-50 rounded-2xl px-6 py-4 focus:ring-4 focus:ring-black/5 focus:border-black transition-all outline-none"
+                className="mt-1 block w-full border border-gray-100 bg-gray-50 rounded-2xl px-6 py-4 focus:ring-4 focus:ring-primary/10 focus:border-secondary transition-all outline-none"
                 placeholder="••••••••"
               />
             </div>
@@ -111,7 +111,7 @@ export default function SignUp() {
                 required
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
-                className="mt-1 block w-full border border-gray-100 bg-gray-50 rounded-2xl px-6 py-4 focus:ring-4 focus:ring-black/5 focus:border-black transition-all outline-none"
+                className="mt-1 block w-full border border-gray-100 bg-gray-50 rounded-2xl px-6 py-4 focus:ring-4 focus:ring-primary/10 focus:border-secondary transition-all outline-none"
                 placeholder="••••••••"
               />
             </div>
@@ -120,7 +120,7 @@ export default function SignUp() {
           <button
             type="submit"
             disabled={isRegistering}
-            className={`w-full bg-black text-white py-5 rounded-2xl font-black text-lg hover:bg-gray-800 transition-all shadow-xl active:scale-95 disabled:opacity-50 flex items-center justify-center`}
+            className={`w-full bg-primary text-black py-5 rounded-[2rem] font-black text-lg hover:opacity-90 transition-all shadow-xl active:scale-95 disabled:opacity-50 flex items-center justify-center border-4 border-white`}
           >
             {isRegistering ? 'Creating Account...' : 'Register Now'}
           </button>
@@ -128,7 +128,7 @@ export default function SignUp() {
 
         <p className="mt-8 text-center text-sm text-gray-400 font-medium">
           Already have an account?{" "}
-          <Link to="/login" className="font-black text-black hover:underline underline-offset-4 decoration-2">
+          <Link to="/login" className="font-black text-secondary hover:underline underline-offset-4 decoration-2">
             Sign In
           </Link>
         </p>

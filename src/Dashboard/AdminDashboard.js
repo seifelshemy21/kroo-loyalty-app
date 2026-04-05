@@ -9,10 +9,10 @@ export default function AdminDashboard() {
   const { data: customers, isLoading: isCustomersLoading } = useCustomers();
 
   const metrics = [
-    { label: 'Platform Users', value: stats?.totalUsers || (customers ? customers.length + 1 : '0'), icon: <FiUsers />, color: 'bg-indigo-600', trend: 'Total account base' },
-    { label: 'Loyalty Customers', value: customers?.length || '0', icon: <FiBriefcase />, color: 'bg-emerald-600', trend: 'Active in program' },
-    { label: 'Points Issued', value: stats?.totalPoints || '0', icon: <FiStar />, color: 'bg-amber-500', trend: 'Lifetime total' },
-    { label: 'Redemptions', value: stats?.redemptions || '0', icon: <FiRefreshCcw />, color: 'bg-rose-500', trend: 'Successful claims' },
+    { label: 'Platform Users', value: stats?.totalUsers || (customers ? customers.length + 1 : '0'), icon: <FiUsers />, color: 'bg-primary text-black', trend: 'Total account base' },
+    { label: 'Loyalty Customers', value: customers?.length || '0', icon: <FiBriefcase />, color: 'bg-secondary text-white', trend: 'Active in program' },
+    { label: 'Points Issued', value: stats?.totalPoints || '0', icon: <FiStar />, color: 'bg-indigo-500 text-white', trend: 'Lifetime total' },
+    { label: 'Redemptions', value: stats?.redemptions || '0', icon: <FiRefreshCcw />, color: 'bg-rose-500 text-white', trend: 'Successful claims' },
   ];
 
   const isLoading = isStatsLoading || isCustomersLoading;
@@ -36,7 +36,7 @@ export default function AdminDashboard() {
           <button className="flex items-center gap-2 bg-gray-50 text-gray-600 px-5 py-3 rounded-2xl font-bold text-sm border border-gray-100 hover:bg-gray-100 transition">
             <FiSettings /> Settings
           </button>
-          <Link to="/admin/user/create" className="flex items-center gap-2 bg-black text-white px-6 py-3 rounded-2xl font-bold text-sm shadow-xl hover:bg-gray-800 transition transform hover:scale-105 active:scale-95">
+          <Link to="/admin/user/create" className="flex items-center gap-2 bg-primary text-black px-6 py-3 rounded-2xl font-bold text-sm shadow-xl hover:opacity-90 transition transform hover:scale-105 active:scale-95">
             <FiPlus /> Add Customer
           </Link>
         </div>
@@ -50,7 +50,7 @@ export default function AdminDashboard() {
               <div className={`w-14 h-14 ${item.color} rounded-2xl flex items-center justify-center text-white text-2xl shadow-lg group-hover:scale-110 transition-transform`}>
                 {item.icon}
               </div>
-              <div className="px-3 py-1 bg-gray-50 rounded-full text-[10px] font-black text-gray-400 uppercase tracking-wider group-hover:bg-black group-hover:text-white transition-colors">
+              <div className="px-3 py-1 bg-gray-50 rounded-full text-[10px] font-black text-gray-400 uppercase tracking-wider group-hover:bg-primary group-hover:text-black transition-colors">
                 Live
               </div>
             </div>
@@ -93,15 +93,15 @@ export default function AdminDashboard() {
         </div>
 
         {/* Rewards Management */}
-        <div className="bg-black text-white rounded-[2.5rem] p-8 shadow-2xl relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 -mr-16 -mt-16 rounded-full blur-3xl"></div>
+        <div className="bg-secondary text-white rounded-[2.5rem] p-8 shadow-2xl relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 -mr-16 -mt-16 rounded-full blur-3xl"></div>
           <h3 className="text-xl font-black mb-6 relative z-10">Program Rewards</h3>
           <div className="space-y-4 relative z-10">
             <div className="p-5 bg-white/10 rounded-2xl border border-white/5 backdrop-blur-sm">
               <p className="text-[10px] font-black uppercase tracking-widest text-white/40 mb-1">Standard Perk</p>
               <p className="font-bold">Free Premium Coffee</p>
               <div className="mt-4 flex justify-between items-center">
-                <span className="text-xs font-black px-2 py-1 bg-white text-black rounded-lg">10 Points</span>
+                <span className="text-xs font-black px-2 py-1 bg-white text-secondary rounded-lg">10 Points</span>
                 <span className="text-[10px] font-bold opacity-40 italic">Active</span>
               </div>
             </div>
@@ -109,12 +109,12 @@ export default function AdminDashboard() {
               <p className="text-[10px] font-black uppercase tracking-widest text-white/40 mb-1">Elite Perk</p>
               <p className="font-bold">1 Hour Meeting Room</p>
               <div className="mt-4 flex justify-between items-center">
-                <span className="text-xs font-black px-2 py-1 bg-white text-black rounded-lg">50 Points</span>
+                <span className="text-xs font-black px-2 py-1 bg-white text-secondary rounded-lg">50 Points</span>
                 <span className="text-[10px] font-bold opacity-40 italic">Active</span>
               </div>
             </div>
           </div>
-          <button className="w-full mt-8 bg-white text-black py-4 rounded-2xl font-black text-sm hover:bg-gray-100 transition shadow-lg">
+          <button className="w-full mt-8 bg-white text-secondary py-4 rounded-2xl font-black text-sm hover:bg-gray-100 transition shadow-lg">
             Manage Rewards
           </button>
         </div>

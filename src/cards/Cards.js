@@ -39,10 +39,10 @@ export default function Cards() {
               Premium Tier
             </span>
             <p className="text-xs text-gray-500 mt-1">75% to Elite</p>
-            <div className="w-full h-2 bg-gray-200 rounded mt-1">
-              <div className="h-2 bg-black rounded w-3/4"></div>
+            <div className="w-full h-2 bg-gray-100 rounded mt-1">
+              <div className="h-2 bg-secondary rounded w-3/4 shadow-[0_0_10px_rgba(255,140,0,0.3)]"></div>
             </div>
-            <button className="mt-4 bg-black text-white w-full py-2 rounded-lg">
+            <button className="mt-4 bg-primary text-black font-black w-full py-3 rounded-2xl shadow-lg hover:opacity-90 transition active:scale-95 border-2 border-white">
               Check In
             </button>
           </div>
@@ -138,36 +138,36 @@ export default function Cards() {
                     <h3 className="font-semibold">Tier Progress</h3>
                     <div className="space-y-3 mt-2">
                       <div>
-                        <span className="text-xs bg-black text-white px-2 py-1 rounded">
+                        <span className="text-[10px] font-black uppercase tracking-widest bg-primary text-black px-2 py-1 rounded-lg">
                           Basic
                         </span>{" "}
-                        <span className="text-sm">0-250 points</span>
-                        <div className="w-full h-2 bg-gray-200 rounded mt-1">
-                          <div className="h-2 bg-black rounded w-full"></div>
+                        <span className="text-sm font-bold">0-250 points</span>
+                        <div className="w-full h-2 bg-gray-100 rounded mt-1">
+                          <div className="h-2 bg-secondary rounded w-full"></div>
                         </div>
                         <p className="text-xs text-right text-gray-500">
                           Completed
                         </p>
                       </div>
                       <div>
-                        <span className="text-xs bg-black text-white px-2 py-1 rounded">
+                        <span className="text-[10px] font-black uppercase tracking-widest bg-primary text-black px-2 py-1 rounded-lg">
                           Standard
                         </span>{" "}
-                        <span className="text-sm">251-500 points</span>
-                        <div className="w-full h-2 bg-gray-200 rounded mt-1">
-                          <div className="h-2 bg-black rounded w-full"></div>
+                        <span className="text-sm font-bold">251-500 points</span>
+                        <div className="w-full h-2 bg-gray-100 rounded mt-1">
+                          <div className="h-2 bg-secondary rounded w-full"></div>
                         </div>
                         <p className="text-xs text-right text-gray-500">
                           Completed
                         </p>
                       </div>
                       <div>
-                        <span className="text-xs bg-black text-white px-2 py-1 rounded">
+                        <span className="text-[10px] font-black uppercase tracking-widest bg-primary text-black px-2 py-1 rounded-lg">
                           Premium
                         </span>{" "}
-                        <span className="text-sm">501-1000 points</span>
-                        <div className="w-full h-2 bg-gray-200 rounded mt-1">
-                          <div className="h-2 bg-black rounded w-3/4"></div>
+                        <span className="text-sm font-bold">501-1000 points</span>
+                        <div className="w-full h-2 bg-gray-100 rounded mt-1">
+                          <div className="h-2 bg-secondary rounded w-3/4 shadow-[0_0_10px_rgba(255,140,0,0.3)]"></div>
                         </div>
                         <p className="text-xs text-right text-gray-500">
                           750/1000
