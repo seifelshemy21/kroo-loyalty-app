@@ -2,7 +2,7 @@ import React from 'react';
 import { useUserProfile } from '../hooks/useLoyalty';
 import { useAuth } from '../hooks/useAuth';
 import { Link } from 'react-router-dom';
-import { FiUsers, FiCreditCard, FiStar, FiGift, FiClock, FiCheckCircle, FiActivity } from 'react-icons/fi';
+import { FiStar, FiGift, FiClock, FiCheckCircle, FiActivity } from 'react-icons/fi';
 
 export default function Dashboard() {
   const { user } = useAuth();
@@ -84,8 +84,8 @@ export default function Dashboard() {
                 </div>
               </div>
             </div>
-            <Link 
-              to="/dashboard/perks" 
+            <Link
+              to="/dashboard/perks"
               className="w-full mt-8 bg-primary text-black py-4 rounded-[2rem] font-black text-xs text-center uppercase tracking-[0.2em] shadow-xl hover:opacity-90 transition active:scale-95 flex items-center justify-center gap-2 border-2 border-white"
             >
               <FiActivity /> View All Perks History

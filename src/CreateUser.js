@@ -8,14 +8,12 @@ export default function CreateUser() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-  const [accept, setAccept] = useState(false);
   const [loading, setLoading] = useState(false);
 
   const nav = useNavigate();
 
   async function submit(e) {
     e.preventDefault();
-    setAccept(true);
 
     if (password !== confirmPassword) {
       toast.error("Passwords do not match");
